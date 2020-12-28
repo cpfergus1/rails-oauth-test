@@ -1,0 +1,8 @@
+<h1>Welcome to this awesome Oauth test</h1>
+
+<% if current_user %>
+<h3> Welcome <%= current_user.name %></h3>
+<% else %>
+<h3>Please login using git hub by pushing the button below</h3>
+<%= button_to 'Git Hub Sign In', "/auth/github", local: true, method: :get%>
+<% end %>
