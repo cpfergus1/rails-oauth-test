@@ -6,3 +6,16 @@
 <h3>Please login using git hub by pushing the button below</h3>
 <%= button_to 'Git Hub Sign In', "/auth/github", local: true, method: :get%>
 <% end %>
+<h4>User Public Repos</h4>
+<ol>
+<% @repos.each do |repo| %>
+    <li><%= "#{repo.name} / #{repo.description}" if repo.private == false %></li>
+<% end %>
+</ol>
+
+<h4>User Private Repos</h4>
+<ol>
+<% @repos.each do |repo| %>
+    <li><%= "#{repo.name} / #{repo.description}" if repo.private == true %></li>
+<% end %>
+</ol>
